@@ -1,11 +1,6 @@
-from fuzzywuzzy import process
+import ini_grabber
 
-# TODO #3: Allow ini path to be settable so other people can use this script.
-iniPath = ""
-
-# Opens the ini from its file location, with read only access.
-serverConfig = open(iniPath, "r")
-ini = serverConfig.readlines()
+ini = ini_grabber.serverConfig.readlines()
 
 # Mod Names and Workshop Ids are captured as strings from ini file.
 modNames = ini[19]
@@ -71,15 +66,3 @@ print(sbsList)
 print("It is likely that the Ids might not be assigned to the right mod if a mod includes more mods.")
 print("Only one Id is given to a mod and the included mods are not given an empty space.")
 print("As a result, the server fails to launch because it gets confused that Mods and Ids don't match.")
-
-# TODO #4: Find mods with more included mods and give them an empty string as its id and write to the ini these changes.
-# match = "jiggas"
-# ratios = process.extract(match, mnsClean)
-# print(ratios)
-
-# for modname in mnsClean:
-#     print(modname)
-
-# match2 = "AntiqueArmory"
-# ratios = process.extract(match2, mnsClean)
-# print(ratios)
