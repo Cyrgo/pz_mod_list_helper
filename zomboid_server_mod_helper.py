@@ -1,6 +1,9 @@
-import ini_grabber
+import path_input
 
-ini = ini_grabber.serverConfig.readlines()
+# Opens the ini from its file location, with read only access.
+server_config = open(path_input.ini_path_input(), "r")
+
+ini = server_config.readlines()
 
 # Mod Names and Workshop Ids are captured as strings from ini file.
 modNames = ini[19]
