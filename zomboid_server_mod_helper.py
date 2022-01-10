@@ -1,3 +1,4 @@
+import output_utilities
 import path_input
 
 # Opens the ini from its file location, with read only access.
@@ -50,10 +51,14 @@ if mnCount != idCount:
         print("but only " + str(idCount) + " Workshop Id.")
     if diff >= 2:
         print("You have a few mods that have included mods that are messing up mod id association.")
+        output_utilities.separator()
     else:
         print("You have one mod that has more included mods that are messing up mod id association.")
+        output_utilities.separator()
+
 else:
     print("No Id issues detected.")
+    output_utilities.separator()
 
 # A loop to add dashes to the Id List depending on the difference of the Mod Name List and Id List.
 # This is done so that a proper table can be printed.
@@ -66,6 +71,7 @@ if idCount < mnCount:
 # and only one id is given to both mods in the Workshop Id line of the ini.
 sbsList = "\n".join("{:>5} : {:5}".format(x, y) for x, y in zip(mnsClean, idsClean))
 print(sbsList)
+output_utilities.separator()
 print("It is likely that the Ids might not be assigned to the right mod if a mod includes more mods.")
 print("Only one Id is given to a mod and the included mods are not given an empty space.")
 print("As a result, the server may fail to launch because it gets confused that Mods and Ids don't match.")
