@@ -1,0 +1,3 @@
+import zomboid_server_mod_helper
+
+zomboid_server_mod_helper.mod_list_diagnostic()

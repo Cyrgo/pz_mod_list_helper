@@ -67,6 +67,3 @@ def mod_list_diagnostic():
     print("It is likely that the Ids might not be assigned to the right mod if a mod includes more mods.")
     print("Only one Id is given to a mod and the included mods are not given an empty space.")
     print("As a result, the server may fail to launch because it gets confused that Mods and Ids don't match.")
-
-
-mod_list_diagnostic()
