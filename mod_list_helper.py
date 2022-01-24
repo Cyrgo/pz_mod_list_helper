@@ -1,10 +1,10 @@
 import output_utilities
-import path_input
+import path_utilities
 
 
 def mod_list_diagnostic():
     # Opens the ini from its file location, with read only access.
-    server_config = open(path_input.ini_path_input(), "r")
+    server_config = open(path_utilities.ini_path_input(), "r")
     ini = server_config.readlines()
     # Mod Names and Workshop Ids are captured as strings from ini file.
     mod_names = ini[19]
@@ -66,4 +66,3 @@ def mod_list_diagnostic():
     output_utilities.separator()
     print("It is likely that the Ids might not be assigned to the right mod if a mod includes more mods.")
     print("Only one Id is given to a mod and the included mods are not given an empty space.")
-    print("As a result, the server may fail to launch because it gets confused that Mods and Ids don't match.")
