@@ -1,2 +1,4 @@
 def welcome_message():
-    return str("Click on Spiffo to force update your Server mods!")
+    return str("Type the name of your drive where your SteamLibrary is in." +
+               "\n" +
+               "Click on Spiffo to force update your Server mods!")
