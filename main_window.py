@@ -1,9 +1,9 @@
+import mod_update_fixer
+import output_utilities
 import path_utilities
 import tkinter
 from tkinter import *
-from tkinter import messagebox
 
-import output_utilities
 
 main_window = tkinter.Tk()
 main_window.wm_iconbitmap('images/icon.ico')
@@ -14,22 +14,18 @@ drive_var = tkinter.StringVar()
 drive_entry = tkinter.Entry(main_window, textvariable=drive_var)
 
 
-def alert(file):
-    messagebox.showinfo("Hello", file)
-
-
-def please_wait():
-    messagebox.showinfo("Running", "Please wait.")
-
-
 def submit():
-    please_wait()
+    output_utilities.please_wait()
 
     drive_name = drive_entry.get()
 
-    file = path_utilities.find_workshop_file_path("appworkshop_108600.acf", drive_name)
+    file_path = path_utilities.client_workshop_path(drive_name)
 
-    alert(file)
+    folder_path = path_utilities.server_workshop_path(drive_name)
+
+    file_folder = mod_update_fixer.force_update(file_path, folder_path)
+
+    output_utilities.alert(file_folder)
 
 
 main_lbl = Label(main_window, text=output_utilities.welcome_message(), font=("calibre", 10, "bold"))
