@@ -1,3 +1,13 @@
+import os
+
+
+def find_workshop_file_path(filename, drive):
+
+    for root, dirs, files in os.walk(drive + ":\\"):
+        if filename in files:
+            return root + "\\" + filename
+
+
 # This function takes in the string path of Project Zomboid Client Steam Workshop Content File and returns it to be
 # used.
 def client_workshop_path_input():

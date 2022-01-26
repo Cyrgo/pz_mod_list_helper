@@ -1,3 +1,4 @@
+import path_utilities
 import tkinter
 from tkinter import *
 from tkinter import messagebox
@@ -13,17 +14,22 @@ drive_var = tkinter.StringVar()
 drive_entry = tkinter.Entry(main_window, textvariable=drive_var)
 
 
-def alert():
-    messagebox.showinfo("Hello", drive_entry.get())
+def alert(file):
+    messagebox.showinfo("Hello", file)
+
+
+def please_wait():
+    messagebox.showinfo("Running", "Please wait.")
 
 
 def submit():
+    please_wait()
 
     drive_name = drive_entry.get()
 
-    alert()
+    file = path_utilities.find_workshop_file_path("appworkshop_108600.acf", drive_name)
 
-    return drive_name
+    alert(file)
 
 
 main_lbl = Label(main_window, text=output_utilities.welcome_message(), font=("calibre", 10, "bold"))
