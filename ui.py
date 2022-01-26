@@ -5,7 +5,7 @@ from tkinter import messagebox
 import output_utilities
 
 main_window = tkinter.Tk()
-main_window.wm_iconbitmap('icon.ico')
+main_window.wm_iconbitmap('images/icon.ico')
 main_window.title("PZ Server Mod Force Updater")
 main_window.geometry("360x140+10+20")
 
@@ -29,7 +29,7 @@ def submit():
     alert()
 
 
-spiffo = PhotoImage(file="spiffo-button.png")
+spiffo = PhotoImage(file="images/spiffo-button.png")
 submit_btn = tkinter.Button(main_window, text="Submit", command=submit, image=spiffo)
 
 main_lbl = Label(main_window, text=output_utilities.welcome_message(), font=("calibre", 10, "bold"))
